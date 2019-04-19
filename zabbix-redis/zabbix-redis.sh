@@ -117,32 +117,20 @@ if $(redis-cli -h $host -p $port ping >/dev/null 2>&1);then
       	fi
       	;;
      used_cpu_sys)
-	before=`$commd CPU|grep -w used_cpu_sys|$cut_cmd|tr -d "\r"`
-        sleep 1
-        now=`$commd CPU|grep -w used_cpu_sys|$cut_cmd|tr -d "\r"`
-        RESULT=$(echo 0$(echo "scale=2;$now-$before"|bc))
-        echo $(bc <<< "$RESULT * 100")
+	RESULT=`$commd CPU|grep -w used_cpu_sys|$cut_cmd|tr -d "\r"`
+        echo RESULT
       	;;
      used_cpu_user)
-	before=`$commd CPU|grep -w used_cpu_user|$cut_cmd|tr -d "\r"`
-        sleep 1
-        now=`$commd CPU|grep -w used_cpu_user|$cut_cmd|tr -d "\r"`
-        RESULT=$(echo 0$(echo "scale=2;$now-$before"|bc))
-        echo $(bc <<< "$RESULT * 100")
+	RESULT=`$commd CPU|grep -w used_cpu_user|$cut_cmd|tr -d "\r"`
+        echo $RESULT
       	;;
      used_cpu_sys_children)
-	before=`$commd CPU|grep -w used_cpu_sys_children|$cut_cmd|tr -d "\r"`
-        sleep 1
-        now=`$commd CPU|grep -w used_cpu_sys_children|$cut_cmd|tr -d "\r"`
-        RESULT=$(echo 0$(echo "scale=2;$now-$before"|bc))
-        echo $(bc <<< "$RESULT * 100")
+	RESULT=`$commd CPU|grep -w used_cpu_sys_children|$cut_cmd|tr -d "\r"`
+        echo $RESULT
       	;;
      used_cpu_user_children)
-	before=`$commd CPU|grep -w used_cpu_user_children|$cut_cmd|tr -d "\r"`
-        sleep 1
-        now=`$commd CPU|grep -w used_cpu_user_children|$cut_cmd|tr -d "\r"`
-        RESULT=$(echo 0$(echo "scale=2;$now-$before"|bc))
-        echo $(bc <<< "$RESULT * 100")
+	RESULT=`$commd CPU|grep -w used_cpu_user_children|$cut_cmd|tr -d "\r"`
+        echo $RESULT
       	;;
     *)
 	echo "parameter error"
