@@ -167,9 +167,9 @@ if __name__ == '__main__':
 #    print(sysInfo())
     data_args = sysInfo()
     encoded_args = parse.urlencode(data_args).encode('utf-8')
-    url = 'https://40.125.203.123:1024/api/cloud-assets/'
+    url = 'https://x.x.x.x:1024/api/cloud-assets/'
     r = request.Request(url=url, data=parse.urlencode(data_args).encode('utf-8'))
-    r.add_header('Authorization', 'Token 606df046287b95c50944d955c9e22eb297e6bf3f')
+    r.add_header('Authorization', 'Token 636df046287b95c50944d955c9e22eb297e6bf3f')
     try:
         rt = request.urlopen(r)
         if rt.code == 201 or rt.code == 202:
