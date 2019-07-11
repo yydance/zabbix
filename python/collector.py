@@ -4,7 +4,7 @@
 #
 
 from urllib import (request, parse, error)
-import os, socket, uuid, fcntl, struct, subprocess,platform
+import os, socket, uuid, fcntl, struct, subprocess, platform
 import hashlib, re, json
 import ssl
 import logging, logging.handlers
