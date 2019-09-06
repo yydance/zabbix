@@ -1,7 +1,8 @@
 #!/bin/bash
 # decription: you need to record zookeeper cluster information
 #             about ip-hostname in file '/etc/hosts'
-#
+# note: please install command 'nc' before using this script
+#     - centos: yum -y install bc
 
 local_ip="$(grep $(hostname) /etc/hosts|awk '{print $1}')"
 zk_port=2181
